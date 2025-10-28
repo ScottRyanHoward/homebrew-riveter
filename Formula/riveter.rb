@@ -1,34 +1,11 @@
 class Riveter < Formula
   desc "Infrastructure Rule Enforcement as Code for Terraform configurations"
   homepage "https://github.com/riveter/riveter"
-  version "{{VERSION}}"
+  url "https://github.com/ScottRyanHoward/riveter/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "1e27357305bf001c9fc0546a27ce1788cae1fc56997e801f48a62b2134292f2e"
   license "MIT"
   
-  # Bottle block will be added automatically by brew when building bottles
-  # bottle do
-  #   sha256 cellar: :any_skip_relocation, arm64_sonoma:   "..."
-  #   sha256 cellar: :any_skip_relocation, arm64_ventura:  "..."
-  #   sha256 cellar: :any_skip_relocation, arm64_monterey: "..."
-  #   sha256 cellar: :any_skip_relocation, sonoma:         "..."
-  #   sha256 cellar: :any_skip_relocation, ventura:        "..."
-  #   sha256 cellar: :any_skip_relocation, monterey:       "..."
-  #   sha256 cellar: :any_skip_relocation, x86_64_linux:   "..."
-  # end
-
-  # Platform-specific binary URLs and checksums
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/riveter/riveter/releases/download/v{{VERSION}}/riveter-{{VERSION}}-macos-intel.tar.gz"
-    sha256 "{{MACOS_INTEL_SHA256}}"
-  elsif OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/riveter/riveter/releases/download/v{{VERSION}}/riveter-{{VERSION}}-macos-arm64.tar.gz"
-    sha256 "{{MACOS_ARM64_SHA256}}"
-  elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/riveter/riveter/releases/download/v{{VERSION}}/riveter-{{VERSION}}-linux-x86_64.tar.gz"
-    sha256 "{{LINUX_X86_64_SHA256}}"
-  end
-
-  # No runtime dependencies required for standalone binary
-  # The binary is self-contained and includes all necessary dependencies
+  depends_on "python@3.12"
   
   def caveats
     <<~EOS
@@ -44,22 +21,7 @@ class Riveter < Formula
   end
 
   def install
-    # Verify the binary exists in the extracted archive
-    unless File.exist?("riveter")
-      odie "riveter binary not found in the downloaded archive"
-    end
-    
-    # Install the binary to the bin directory
-    bin.install "riveter"
-    
-    # Ensure the binary is executable
-    (bin/"riveter").chmod 0755
-    
-    # Verify the installed binary works
-    system "#{bin}/riveter", "--version"
-    unless $?.success?
-      odie "riveter binary installation verification failed"
-    end
+    virtualenv_install_with_resources using: "python@3.12"
   end
 
   test do
