@@ -21,7 +21,9 @@ class Riveter < Formula
   end
 
   def install
-    virtualenv_install_with_resources using: "python@3.12"
+    virtualenv_create(libexec, "python3.12")
+    system libexec/"bin/pip", "install", buildpath
+    bin.install_symlink libexec/"bin/riveter"
   end
 
   test do
