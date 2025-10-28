@@ -1,6 +1,4 @@
 class Riveter < Formula
-  include Language::Python::Virtualenv
-
   desc "Infrastructure Rule Enforcement as Code for Terraform configurations"
   homepage "https://github.com/riveter/riveter"
   url "https://github.com/ScottRyanHoward/riveter/archive/refs/tags/v0.9.0.tar.gz"
@@ -8,11 +6,10 @@ class Riveter < Formula
   license "MIT"
   
   depends_on "python@3.12"
-  depends_on "rust" => :build
   
   def caveats
     <<~EOS
-      Riveter has been installed as a Python package.
+      Riveter has been installed directly with Python.
       
       To get started:
         riveter --help
@@ -24,9 +21,7 @@ class Riveter < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    system venv/"bin/pip", "install", buildpath
-    bin.install_symlink libexec/"bin/riveter"
+    system "python3.12", "-m", "pip", "install", "--prefix=#{prefix}", buildpath
   end
 
   test do
