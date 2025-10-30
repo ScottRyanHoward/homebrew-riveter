@@ -1,6 +1,6 @@
 class Riveter < Formula
   desc "Infrastructure Rule Enforcement as Code for Terraform configurations"
-  homepage "https://github.com/riveter/riveter"
+  homepage "https://github.com/ScottRyanHoward/riveter"
   version "0.11.10"
   license "MIT"
 
