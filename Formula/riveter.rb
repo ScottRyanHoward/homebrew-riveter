@@ -16,7 +16,7 @@ class Riveter < Formula
   end
 
   resource "rule_packs" do
-    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.13.3/riveter-0.13.3.tar.gz"
+    url "https://github.com/ScottRyanHoward/riveter/archive/v0.13.3.tar.gz"
     sha256 "60a8b39c7ff485ec7a6b638900ca660a9b534479beac9c857b6c3cd7333eee97"
   end
 
