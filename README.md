@@ -1,6 +1,8 @@
 # Homebrew Tap for Riveter
 
-This is the official Homebrew tap for [Riveter](https://github.com/riveter/riveter), an Infrastructure Rule Enforcement as Code tool.
+This is the official Homebrew tap for [Riveter](https://github.com/ScottRyanHoward/riveter), an Infrastructure Rule Enforcement as Code tool.
+
+**Note:** This repository contains the Homebrew formula for Riveter. You don't need to clone or interact with this repository directly. Simply use the installation commands below to install Riveter via Homebrew.
 
 ## Installation
 
@@ -75,16 +77,16 @@ Riveter is a powerful tool for enforcing infrastructure rules and best practices
 - PCI DSS Requirements
 - SOC 2 Controls
 
-For more information, visit the [main Riveter repository](https://github.com/riveter/riveter).
+For more information, visit the [main Riveter repository](https://github.com/ScottRyanHoward/riveter).
 
 ## Support
 
 If you encounter issues with the Homebrew installation:
 
-1. Check the [troubleshooting guide](https://github.com/riveter/riveter#troubleshooting)
-2. Open an issue in the [main Riveter repository](https://github.com/riveter/riveter/issues)
+1. Check the [troubleshooting guide](https://github.com/ScottRyanHoward/riveter#troubleshooting)
+2. Open an issue in the [main Riveter repository](https://github.com/ScottRyanHoward/riveter/issues)
 3. For tap-specific issues, open an issue in this repository
 
 ## Contributing
 
-This tap is automatically updated when new Riveter releases are published. Manual contributions are generally not needed, but if you notice issues with the formula, please open an issue.
+This tap is automatically updated when new Riveter releases are published. You don't need to clone this repository or make manual changes. If you notice issues with the formula, please open an issue in the [main Riveter repository](https://github.com/ScottRyanHoward/riveter/issues).
