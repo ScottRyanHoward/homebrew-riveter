@@ -6,18 +6,18 @@ class Riveter < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.13.10/riveter-0.13.10-macos-intel.tar.gz"
-    sha256 "PLACEHOLDER_CHECKSUM_MACOS_INTEL"
+    sha256 "bb284c4d7dd7d325e1abadefcf3989eff9bcad67a4e010029375cd2fb14e4bf0"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.13.10/riveter-0.13.10-macos-arm64.tar.gz"
-    sha256 "PLACEHOLDER_CHECKSUM_MACOS_ARM64"
+    sha256 "203782bc359a8846d19de30fcd6b5300e1fe07f48732f0a71dc31c05b04743f3"
   elsif OS.linux?
     url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.13.10/riveter-0.13.10-linux-x86_64.tar.gz"
-    sha256 "PLACEHOLDER_CHECKSUM_LINUX_X86_64"
+    sha256 "20fcf019892d5016d68b5c95c28eaef34a33223ec8a9f2f638d68c2a0d46f2f4"
   end
 
   resource "rule_packs" do
     url "https://github.com/ScottRyanHoward/riveter/archive/v0.13.10.tar.gz"
-    sha256 "PLACEHOLDER_SOURCE_CHECKSUM"
+    sha256 "75e09c955b58f2fcb1cb671022412a7ec5aeb5fdbf0882dc8610bc860e81b8b6"
   end
 
   def install
