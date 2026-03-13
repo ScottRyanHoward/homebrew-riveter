@@ -29,9 +29,25 @@ class Riveter < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      Rule packs have been installed to:
+        #{share}/riveter/rule_packs/
+
+      To scan a Terraform file against a built-in rule pack:
+        riveter scan -p aws-security -t main.tf
+
+      To list all available rule packs:
+        riveter list-rule-packs
+
+      To use a custom rule file:
+        riveter scan -r my-rules.yml -t main.tf
+    EOS
+  end
+
   test do
-    # Test that the binary runs and shows version
-    assert_match "0.13.14", shell_output("#{bin}/riveter --version")
+    # Test that the binary runs and reports the correct version
+    assert_match version.to_s, shell_output("#{bin}/riveter --version")
 
     # Test that help command works and contains expected content
     help_output = shell_output("#{bin}/riveter --help")
