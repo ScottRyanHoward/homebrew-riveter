@@ -6,11 +6,8 @@ class Riveter < Formula
   version "0.1.0"
   license "MIT"
 
-  if OS.mac? && Hardware::CPU.arm?
+  if OS.mac?
     url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.1.0/riveter-0.1.0-macos-arm64.tar.gz"
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  elsif OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.1.0/riveter-0.1.0-macos-intel.tar.gz"
     sha256 "0000000000000000000000000000000000000000000000000000000000000000"
   elsif OS.linux?
     url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.1.0/riveter-0.1.0-linux-x86_64.tar.gz"
@@ -39,6 +36,8 @@ class Riveter < Formula
         riveter scan -p aws-security -t main.tf
         riveter list-rule-packs
         riveter scan -r custom-rules.yml -t main.tf
+
+      Note: Intel Mac users can run this binary via Rosetta 2.
     EOS
   end
 
