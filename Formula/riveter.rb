@@ -3,20 +3,20 @@
 class Riveter < Formula
   desc "Infrastructure Rule Enforcement as Code for Terraform configurations"
   homepage "https://github.com/ScottRyanHoward/riveter"
-  version "0.2.5"
+  version "0.2.6"
   license "MIT"
 
   if OS.mac?
-    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.2.5/riveter-0.2.5-macos-arm64.tar.gz"
-    sha256 "b2d1d365f5dd80dd020c04810542de3d210a84083c796633399dc8eaf41de0b9"
+    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.2.6/riveter-0.2.6-macos-arm64.tar.gz"
+    sha256 "3611ccb3f04773c046e906ff7bbe6b177cdca81986c9e8f5704d4f5a54e84074"
   elsif OS.linux?
-    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.2.5/riveter-0.2.5-linux-x86_64.tar.gz"
-    sha256 "e0f325e8a1c18a6685b1ae57ae83e9111f8b920519bf8ef5d359d99e08b262d2"
+    url "https://github.com/ScottRyanHoward/riveter/releases/download/v0.2.6/riveter-0.2.6-linux-x86_64.tar.gz"
+    sha256 "507294bed2c5fc368e1a0add9dcabf91c69015e3f580434e99f9c4241510da3d"
   end
 
   resource "rule_packs" do
-    url "https://github.com/ScottRyanHoward/riveter/archive/v0.2.5.tar.gz"
-    sha256 "5f311871f2be40bd31e45e8cadbbadc5d377fc9134f3e7f684c867c41ac40d41"
+    url "https://github.com/ScottRyanHoward/riveter/archive/v0.2.6.tar.gz"
+    sha256 "066e02945388b324a429f286774ce8a629307009b3ca248409b59e451e66b1e9"
   end
 
   def install
